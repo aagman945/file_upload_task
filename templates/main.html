@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body %}
+    <h1><b> UPLOADED FILES</b></h1>
+
+    
+    {% for file in file %}
+        
+            <div class="container border">
+                <li>
+                <ul>
+                   
+                <h3> <a href="media/{{file.document}}"><img src="https://pics.freeicons.io/uploads/icons/png/13732025981547546480-512.png" width="60" height="60" align='left'></a> </h3>
+                <h5>{{file.name}} </h5>
+                <p>uploaded by : {{file.username}}</p>
+                <h5> description : {{file.description}} </h5>
+                <a href="media/{{file.document}}" download><input type="button" class="btn btn-warning" value='Download' ></a>
+                </ul>
+                </li>
+            </div>
+
+    {% endfor %}
+        
+{% endblock %}
